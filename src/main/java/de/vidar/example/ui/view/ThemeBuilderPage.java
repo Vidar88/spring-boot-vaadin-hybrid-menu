@@ -23,10 +23,8 @@ import kaesdingeling.hybridmenu.data.enums.ENotificationPriority;
 
 import javax.annotation.PostConstruct;
 
-@SpringView(name = ThemeBuilderPage.VIEW_NAME)
+@SpringView
 public class ThemeBuilderPage extends VerticalLayout implements View {
-
-	public static final String VIEW_NAME = "ThemeBuilderPage";
 
 	private DesignItem designItem = null;
 	private boolean lockForLoad = true;
