@@ -12,7 +12,8 @@ import com.vaadin.spring.navigator.SpringViewProvider;
 import com.vaadin.ui.Alignment;
 import com.vaadin.ui.UI;
 import com.vaadin.ui.VerticalLayout;
-import de.vidar.example.ui.navigation.NavigationManager;
+import de.vidar.example.ui.manager.SpringViewChangeManager;
+import de.vidar.example.ui.manager.NavigationManager;
 import de.vidar.example.ui.view.GroupPage;
 import de.vidar.example.ui.view.HomePage;
 import de.vidar.example.ui.view.MemberPage;
@@ -72,6 +73,7 @@ public class VaadinHybridMenuUI extends UI {
 				.setConfig(menuConfig)
 				.withNotificationCenter(this.notificationCenter)
 				.setInitNavigator(false)
+				.withViewChangeManager(new SpringViewChangeManager())
 				.build();
 
 		// Define the TopMenu in this method

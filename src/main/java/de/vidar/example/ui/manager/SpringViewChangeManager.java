@@ -5,8 +5,9 @@ import com.vaadin.ui.Component;
 import kaesdingeling.hybridmenu.data.leftmenu.MenuButton;
 import kaesdingeling.hybridmenu.data.leftmenu.MenuSubMenu;
 import com.vaadin.navigator.ViewChangeListener.ViewChangeEvent;
+import kaesdingeling.hybridmenu.utils.ViewChangeManager;
 
-public class SpringViewChangeManager {
+public class SpringViewChangeManager implements ViewChangeManager {
 
 	public boolean manage(AbstractOrderedLayout menuContent, ViewChangeEvent event) {
 		boolean foundActiveButton = false;
@@ -17,14 +18,11 @@ public class SpringViewChangeManager {
 					MenuButton menuButton = (MenuButton) component;
 					boolean setButtonActive = false;
 					if (menuButton.getNavigateToName() != null) {
-						if (menuButton.getNavigateToName().startsWith(event.getNewView().getClass().getSimpleName())) {
-							if (menuButton.getNavigateToName() != null && !event.getViewName().isEmpty()) {
-								if (menuButton.getNavigateToName().equals(event.getViewName())) {
-									setButtonActive = true;
-								} else if (menuButton.getNavigateToName().equals(event.getViewName() + "/" + event.getParameters())) {
-									setButtonActive = true;
-								}
-							} else {
+						String navigateToName = menuButton.getNavigateToName();
+						if (navigateToName.startsWith(event.getNewView().getClass().getSimpleName())) {
+							if (navigateToName.equals(event.getNewView().getClass().getSimpleName())) {
+								setButtonActive = true;
+							} else if (navigateToName.equals(event.getViewName() + "/" + event.getParameters())) {
 								setButtonActive = true;
 							}
 						}
