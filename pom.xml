@@ -39,11 +39,6 @@
             <version>${vaadin-spring.version}</version>
         </dependency>
         <dependency>
-            <groupId>com.vaadin</groupId>
-            <artifactId>vaadin-spring</artifactId>
-            <version>${vaadin-spring.version}</version>
-        </dependency>
-        <dependency>
 			<groupId>org.vaadin.addons</groupId>
 			<artifactId>hybridmenu</artifactId>
 			<version>${vaadin.hybridmenu.version}</version>
