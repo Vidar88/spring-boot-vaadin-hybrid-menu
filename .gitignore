@@ -24,4 +24,7 @@ hs_err_pid*
 
 # Folders
 .idea
-target
+.classpath
+.project
+.settings/
+target/
