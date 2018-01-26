@@ -24,4 +24,4 @@ The SimpleName check is also the reason why you have to set the VIEW_NAME of a v
 [Vaadin](https://vaadin.com) is built on open source and the liberal [Apache 2.0 license](http://www.apache.org/licenses/LICENSE-2.0.html).
 
 ### HybridMenu
-[HybridMenu](https://vaadin.com/directory/component/HybridMenu) is a UI component add-on for Vaadin 8 written by KaesDingeling. It is distributed under [Apache 2.0 license](http://www.apache.org/licenses/LICENSE-2.0.html). [HybridMenu Github](For more information see https://github.com/KaesDingeling/Hybrid-Menu).
+[HybridMenu](https://vaadin.com/directory/component/HybridMenu) is a UI component add-on for Vaadin 8 written by KaesDingeling. It is distributed under [Apache 2.0 license](http://www.apache.org/licenses/LICENSE-2.0.html). For more information see [HybridMenu Github](https://github.com/KaesDingeling/Hybrid-Menu).
