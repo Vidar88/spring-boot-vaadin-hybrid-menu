@@ -1,0 +1,13 @@
+<component name="libraryTable">
+  <library name="Maven: org.vaadin.addons:hybridmenu:2.1.2-ALPHA">
+    <CLASSES>
+      <root url="jar://$MAVEN_REPOSITORY$/org/vaadin/addons/hybridmenu/2.1.2-ALPHA/hybridmenu-2.1.2-ALPHA.jar!/" />
+    </CLASSES>
+    <JAVADOC>
+      <root url="jar://$MAVEN_REPOSITORY$/org/vaadin/addons/hybridmenu/2.1.2-ALPHA/hybridmenu-2.1.2-ALPHA-javadoc.jar!/" />
+    </JAVADOC>
+    <SOURCES>
+      <root url="jar://$MAVEN_REPOSITORY$/org/vaadin/addons/hybridmenu/2.1.2-ALPHA/hybridmenu-2.1.2-ALPHA-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>
