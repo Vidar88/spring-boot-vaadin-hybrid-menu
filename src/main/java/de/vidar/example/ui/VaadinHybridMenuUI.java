@@ -43,7 +43,7 @@ import kaesdingeling.hybridmenu.data.top.TopMenuSubContent;
 @Viewport("width=device-width,initial-scale=1.0,user-scalable=no")
 @Title("HybridMenu Spring Boot Test")
 @SuppressWarnings("serial")
-public class VaadinHybridMenuUI extends UI implements DetachListener {
+public class VaadinHybridMenuUI extends UI {
 
 	private final SpringViewProvider viewProvider;
 
@@ -270,11 +270,6 @@ public class VaadinHybridMenuUI extends UI implements DetachListener {
 				.withIcon(VaadinIcons.PALETE)
 				.withClickListener(e -> hybridMenu.setLeftMenuMinimal(!hybridMenu.isLeftMenuMinimal()))
 				.build(demoSettings);
-	}
-
-	@Override
-	public void detach(DetachEvent event) {
-		getUI().close();
 	}
 
 	public HybridMenu getHybridMenu() {
