@@ -8,16 +8,16 @@ import com.vaadin.ui.VerticalLayout;
 
 import javax.annotation.PostConstruct;
 
-@SpringView(name = SettingsPage.VIEW_NAME)
-public class SettingsPage extends VerticalLayout implements View {
+@SpringView(name = MemberPage.VIEW_NAME)
+public class MemberPage extends VerticalLayout implements View {
 
-	public static final String VIEW_NAME = "SettingsPage";
+	public static final String VIEW_NAME = "MemberPage";
 
 	@PostConstruct
 	void init() {
 		Label title = new Label();
-		title.setCaption("Settings");
-		title.setValue("Settings view");
+		title.setCaption("Member");
+		title.setValue("Member view");
 		addComponent(title);
 	}
 
