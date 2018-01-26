@@ -4,7 +4,6 @@ import com.vaadin.annotations.Theme;
 import com.vaadin.annotations.Title;
 import com.vaadin.annotations.Viewport;
 import com.vaadin.icons.VaadinIcons;
-import com.vaadin.server.ClientConnector.DetachListener;
 import com.vaadin.server.FontAwesome;
 import com.vaadin.server.ThemeResource;
 import com.vaadin.server.VaadinRequest;
@@ -70,12 +69,16 @@ public class VaadinHybridMenuUI extends UI {
 				.withNotificationCenter(this.notificationCenter)
 				.build();
 
+		// Define the TopMenu in this method
 		buildTopMenu(this.hybridMenu);
+
+		// Define the LeftMenu in this method
 		buildLeftMenu(this.hybridMenu);
 
+		getNavigator().addProvider(this.viewProvider);
 		setContent(this.hybridMenu);
 
-		getNavigator().addProvider(this.viewProvider);
+		// Change default view here
 		getNavigator().navigateTo(HomePage.VIEW_NAME);
 	}
 
