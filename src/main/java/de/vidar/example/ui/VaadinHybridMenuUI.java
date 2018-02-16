@@ -12,6 +12,8 @@ import com.vaadin.spring.navigator.SpringViewProvider;
 import com.vaadin.ui.Alignment;
 import com.vaadin.ui.UI;
 import com.vaadin.ui.VerticalLayout;
+import de.vidar.example.ui.manager.SpringViewChangeManager;
+import de.vidar.example.ui.manager.NavigationManager;
 import de.vidar.example.ui.view.GroupPage;
 import de.vidar.example.ui.view.HomePage;
 import de.vidar.example.ui.view.MemberPage;
@@ -45,12 +47,15 @@ import kaesdingeling.hybridmenu.data.top.TopMenuSubContent;
 public class VaadinHybridMenuUI extends UI {
 
 	private final SpringViewProvider viewProvider;
+	private final NavigationManager navigationManager;
 
 	private HybridMenu hybridMenu = null;
 	private NotificationCenter notificationCenter = null;
 
-	public VaadinHybridMenuUI(SpringViewProvider viewProvider) {
+	public VaadinHybridMenuUI(SpringViewProvider viewProvider, NavigationManager navigationManager) {
 		this.viewProvider = viewProvider;
+		this.navigationManager = navigationManager;
+		setNavigator(this.navigationManager);
 	}
 
 	@Override
@@ -67,6 +72,8 @@ public class VaadinHybridMenuUI extends UI {
 				.setMenuComponent(EMenuComponents.LEFT_WITH_TOP)
 				.setConfig(menuConfig)
 				.withNotificationCenter(this.notificationCenter)
+				.setInitNavigator(false)
+				.withViewChangeManager(new SpringViewChangeManager())
 				.build();
 
 		// Define the TopMenu in this method
@@ -75,11 +82,10 @@ public class VaadinHybridMenuUI extends UI {
 		// Define the LeftMenu in this method
 		buildLeftMenu(this.hybridMenu);
 
-		getNavigator().addProvider(this.viewProvider);
 		setContent(this.hybridMenu);
+		navigationManager.init(this, hybridMenu.getContent());
 
-		// Change default view here
-		getNavigator().navigateTo(HomePage.VIEW_NAME);
+		navigationManager.navigateToDefaultView();
 	}
 
 	private void buildTopMenu(HybridMenu hybridMenu) {

@@ -8,10 +8,8 @@ import com.vaadin.ui.VerticalLayout;
 
 import javax.annotation.PostConstruct;
 
-@SpringView(name = ErrorPage.VIEW_NAME)
+@SpringView
 public class ErrorPage extends VerticalLayout implements View {
-
-	public static final String VIEW_NAME = "ErrorPage";
 
 	@PostConstruct
 	void init() {
